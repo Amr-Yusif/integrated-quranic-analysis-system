@@ -48,11 +48,25 @@ src/
 │   │   ├── pattern_discovery.ts
 │   │   ├── reasoning_engine.ts
 │   │   └── systematic_explorer.ts
-│   └── integration/
-│       └── knowledge_integrator.ts
+│   ├── integration/
+│   │   └── knowledge_integrator.ts
+│   ├── ml/
+│   │   └── word_expander.ts
+│   └── types/
+│       └── lexicon.ts
+├── api/
+│   ├── exploration/
+│   ├── analysis/
+│   ├── verification/
+│   └── lexicon/
+│       ├── routes.ts
+│       └── controller.ts
 ├── services/
 │   ├── analysis/
-│   └── verification/
+│   ├── verification/
+│   └── lexicon-expansion.service.ts
+├── cli/
+│   └── lexicon-expander.ts
 └── tests/
     ├── integration/
     └── unit/
@@ -79,6 +93,38 @@ src/
    - Source Integration
    - Conflict Resolution
    - Knowledge Merging
+
+5. Lexicon Expansion
+   - ML-based word extraction and analysis
+   - Automatic linguistic feature generation
+   - Batch processing of source texts
+   - Advanced lexical features integration
+
+### Lexicon Expansion Tools
+
+The project now includes tools for expanding the Arabic lexicon using machine learning:
+
+1. CLI for lexicon expansion:
+   ```bash
+   # Extract words from a text file
+   npm run lexicon extract-words -f path/to/text.txt -o output.txt
+
+   # Expand lexicon with new entries from text
+   npm run lexicon expand -f path/to/text.txt -c 20
+
+   # Enhance existing entries with additional features
+   npm run lexicon enhance
+
+   # Batch expand from multiple files
+   npm run lexicon batch-expand -d path/to/texts -p "*.txt"
+   ```
+
+2. API Endpoints:
+   - `GET /api/lexicon/stats` - Get lexicon statistics
+   - `GET /api/lexicon/search?q=word` - Search the lexicon
+   - `GET /api/lexicon/entry/:id` - Get entry by ID
+   - `GET /api/lexicon/word/:word` - Get entry by word
+   - `POST /api/lexicon/expand` - Expand lexicon with ML
 
 ### Contributing
 
